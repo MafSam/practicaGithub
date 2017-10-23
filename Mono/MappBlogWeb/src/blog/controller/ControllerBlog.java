@@ -15,11 +15,12 @@ import blog.view.util.JSFUtil;
 @SessionScoped
 public class ControllerBlog {
 	private List<Blog> listaBlogs;
-	private String nombreBlog;
+	private String nombreBlo;
 	private String descripcionBlog;
 	private String tituloArticulo;
 	private String contenidoArticulo;
 	private Blog blogActual;
+	private String cambio;
 
 	@ManagedProperty(value = "#{controllerUsuario}")
 	private ControllerUsuario controllerUsuario;
