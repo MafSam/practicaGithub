@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:metadata>
+	<f:event listener="#{controllerUsuario.actionComprobarLogin()}"
+		type="preRenderView"></f:event>
+</f:metadata>
+
+<h:head></h:head>
+<body>
+	<p:growl autoUpdate="true"></p:growl>
+	<h:form>
+		<div align="right">
+			<p:commandButton action="#{controllerUsuario.actionSalir()}"
+				icon="ui-icon-close" value="Cerrar sesión"></p:commandButton>
+		</div>
+	</h:form>
+	<p:panel header="FUNCIONES DEL ADMINISTRADOR">
+
+		<h:panelGrid columns="2">
+
+			<h:form id="form1">
+				<p:growl id="msgs" showDetail="true" />
+
+				<p:dataTable value="#{controllerUsuario.listaUsuarios}" var="u"
+					id="tabla1">
+					<p:column headerText="USUARIO">
+						<h:outputText value="#{u.idUsuario}" />
+					</p:column>
+					<p:column headerText="CORREO">
+						<h:outputText value="#{u.correo}" />
+					</p:column>
+					<p:column headerText="ELIMINAR" update="@form, :form1">
+						<p:commandButton
+							actionListener="#{controllerAdmin.eliminarUsu(u)}"
+							icon="ui-icon-close"></p:commandButton>
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</h:panelGrid>
+
+
+	</p:panel>
+</body>
+</html>
+
