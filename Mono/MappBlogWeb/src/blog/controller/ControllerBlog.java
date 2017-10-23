@@ -20,6 +20,7 @@ public class ControllerBlog {
 	private String tituloArticulo;
 	private String contenidoArticulo;
 	private Blog blogActual;
+	private String cambioDeLaWeb;
 	private String cambio;
 
 	@ManagedProperty(value = "#{controllerUsuario}")
