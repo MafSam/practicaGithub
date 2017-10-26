@@ -40,7 +40,7 @@ public class ControllerUsuario {
 	public String actionLogin() {
 		try {
 			confirmadoLogin = managerUsuarios.comprobarUsuario(idUsuario, clave);
-			JSFUtil.crearMensajeInfo("Login correcto");
+			JSFUtil.crearMensajeInfo("Se a Logeado correctamente");
 			// verificamos si el acceso es con admin:
 			if (idUsuario.equals("admin")) {
 				return "admin/index"; 
