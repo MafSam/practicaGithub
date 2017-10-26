@@ -42,7 +42,7 @@ public class ControllerBlog {
 	public void actionListenerCrearBlog() {
 		String idUsuario = controllerUsuario.getIdUsuario();
 		try {
-			managerBlog.crearBLog(idUsuario, nombreBlog, descripcionBlog, tituloArticulo, contenidoArticulo);
+			managerBlog.crearBLog(idUsuario, idUsuario, descripcionBlog, tituloArticulo, contenidoArticulo);
 			JSFUtil.crearMensajeInfo("Blog creado.");
 			listaBlogs = managerBlog.findBlogByUsuario(controllerUsuario.getIdUsuario());
 		} catch (Exception e) {
